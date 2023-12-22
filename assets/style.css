@@ -1,0 +1,131 @@
+/* https://unsplash.com/photos/four-black-horses-near-sea-during-daytime-Vyf873nsaxs?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash */
+
+:root {
+    --bg: rgb(68,48,48);
+    --dark: rgb(163,66,60);
+    --light: rgb(231,227,238);
+    --grad-1: rgb(163,66,60);
+    --grad-2: rgb(222,131,77);
+    --grad-3: rgba(240,210,144,1);
+    --drop-shadow: rgba(68,48,48, 0.7);
+    --lg: 2.5em;
+    --md: 1.25em;
+    --bg-image: url('./images/thanuj-mathew-Vyf873nsaxs-unsplash.jpg');
+}
+
+body {
+    position: relative;
+    scroll-behavior: smooth;
+}
+
+header {
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(255,255,255,0.75),rgba(255,255,255,0.75)) , var(--bg-image);
+    background-size:cover;
+    position: relative;
+    top: 6vh;
+
+}
+
+header .header {
+    max-width: max-content;
+    max-height: max-content;
+}
+
+header h1 {
+    margin: 0 auto;
+    width: fit-content;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    font-size: clamp(30px, 5vw, 60px);
+    color: var(--dark)
+}
+
+header p {
+    position:relative;
+}
+
+header p.subtitle {
+    margin: 0 auto;
+    height: auto;
+    width: fit-content;
+    left: 4vw;
+    font-size: 1.75vw;
+    color: var(--grad-2);
+}
+
+.skip {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    display: none;
+}
+
+.skip:focus {
+    position: static;
+    width: auto;
+    height: auto;
+  }
+
+nav {
+    position: absolute;
+    display: flex;
+    justify-content: end;
+    align-items:end;
+    right: 0px;
+    top: 0px;
+    width: 100vw;
+    height: 6vh;
+    padding: 20px 5px;
+    font-weight: bold;
+    font-size: clamp(12px, 2vw, 20px);
+    letter-spacing: 0.5px;
+    background-color: var(--bg);
+}
+
+nav ul {
+    position: relative;
+    right: 0px;
+    float: right;
+    display: flex;
+    min-width: max-content;
+    max-width: 70%;
+    float: right;
+    justify-content: space-around;
+}
+
+nav li {
+    margin: 0 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--dark);
+    border-bottom: 0.22vh solid var(--light);
+    transition: all 0.5s ease-in-out;
+}
+
+nav a:hover {
+    border-bottom: .44vh solid var(--light);
+}
+
+#about {
+
+}
+
+#portfolio {
+
+}
+
+#contact {
+
+}
+
+#resume {
+    
+}
