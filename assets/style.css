@@ -1,5 +1,7 @@
 /* https://unsplash.com/photos/four-black-horses-near-sea-during-daytime-Vyf873nsaxs?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash */
 
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&family=Gilda+Display&family=Palanquin:wght@400;700&display=swap');
+
 :root {
     --bg: rgb(68,48,48);
     --dark: rgb(163,66,60);
@@ -16,25 +18,29 @@
 body {
     position: relative;
     scroll-behavior: smooth;
+    margin: 0 auto;
+    font-family: 'Palanquin', sans-serif;
 }
 
 header {
-    min-height: 50vh;
+    height: fit-content;
+    padding: 20px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background: linear-gradient(rgba(255,255,255,0.75),rgba(255,255,255,0.75)) , var(--bg-image);
     background-size:cover;
+    background-position: bottom;
     position: relative;
     top: 6vh;
 
 }
 
-header .header {
+/* header .header {
     max-width: max-content;
     max-height: max-content;
-}
+} */
 
 header h1 {
     margin: 0 auto;
@@ -43,7 +49,7 @@ header h1 {
     display: flex;
     flex-direction: column;
     font-size: clamp(30px, 5vw, 60px);
-    color: var(--dark)
+    color: var(--dark);
 }
 
 header p {
@@ -57,6 +63,7 @@ header p.subtitle {
     left: 4vw;
     font-size: 1.75vw;
     color: var(--grad-2);
+    font-family: 'Gilda Display', serif;
 }
 
 .skip {
@@ -89,10 +96,10 @@ nav {
 }
 
 nav ul {
-    position: relative;
     right: 0px;
     float: right;
     display: flex;
+    flex-wrap: wrap;
     min-width: max-content;
     max-width: 70%;
     float: right;
@@ -114,13 +121,67 @@ nav a:hover {
     border-bottom: .44vh solid var(--light);
 }
 
-#about {
-
-}
-
+#about,
+#contact,
+#resume,
 #portfolio {
-
+    display: flex;
+    position: relative;
+    margin-top: 6vh;
+    padding: 20px 10px 20px 40px;
+    text-align: justify;
+    color: var(--dark);
+    float: right;
+    justify-content: start;
 }
+
+#about::before {
+    position: relative;
+    left: 0px;
+    content: 'About Me';
+    border-right: 2px solid var(--dark);
+    padding: 0 5px;
+    margin: 0 20px;
+    font-size: clamp(20px, 3vw, 40px);
+    color: var(--dark);
+    text-align: right;
+    font-weight: bold;
+}
+
+#portfolio::before {
+    position: relative;
+    content: 'Work';
+    border-right: 2px solid var(--dark);
+    padding: 0 5px;
+    margin: 0 20px;
+    font-size: clamp(20px, 3vw, 40px);
+    color: var(--dark);
+    text-align: right;
+    font-weight: bold;
+    margin-left: 0px;
+}
+
+.portfolio {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    gap: 20px;
+    padding: 20px;
+}
+
+  .item {
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .item:first-child {
+    grid-column: span 2;
+  }
 
 #contact {
 
@@ -129,3 +190,4 @@ nav a:hover {
 #resume {
     
 }
+
