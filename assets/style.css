@@ -20,6 +20,7 @@ body {
     scroll-behavior: smooth;
     margin: 0 auto;
     font-family: 'Palanquin', sans-serif;
+    background-color: var(--light);
 }
 
 header {
@@ -37,10 +38,10 @@ header {
 
 }
 
-/* header .header {
+header .header {
     max-width: max-content;
     max-height: max-content;
-} */
+}
 
 header h1 {
     margin: 0 auto;
@@ -125,22 +126,21 @@ nav a:hover {
 #contact,
 #resume,
 #portfolio {
+    max-width: 90%;
     display: flex;
-    position: relative;
+    margin: 0 auto;
     margin-top: 6vh;
-    padding: 20px 10px 20px 40px;
+    padding: 20px 20px 20px 40px;
     text-align: justify;
     color: var(--dark);
-    float: right;
     justify-content: start;
 }
 
-#about::before {
-    position: relative;
-    left: 0px;
-    content: 'About Me';
+*::before {
+    width: 100px;
+    float: left;
     border-right: 2px solid var(--dark);
-    padding: 0 5px;
+    padding: 0 20px;
     margin: 0 20px;
     font-size: clamp(20px, 3vw, 40px);
     color: var(--dark);
@@ -148,17 +148,12 @@ nav a:hover {
     font-weight: bold;
 }
 
+#about::before {
+    content: 'About Me';
+}
+
 #portfolio::before {
-    position: relative;
     content: 'Work';
-    border-right: 2px solid var(--dark);
-    padding: 0 5px;
-    margin: 0 20px;
-    font-size: clamp(20px, 3vw, 40px);
-    color: var(--dark);
-    text-align: right;
-    font-weight: bold;
-    margin-left: 0px;
 }
 
 .portfolio {
