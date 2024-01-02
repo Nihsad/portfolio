@@ -148,7 +148,7 @@ nav a:hover {
 #contact::before,
 #resume::before,
 #portfolio::before {
-    border: 1px solid;
+    width: 20%;
     border-right: 2px solid var(--dark);
     padding: 0 20px 0 0;
     margin: 0 20px;
@@ -163,7 +163,6 @@ nav a:hover {
 }
 
 #portfolio::before {
-    width: 10%;
     content: 'Work';
 }
 

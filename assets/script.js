@@ -1,4 +1,5 @@
-window.onscroll = function() { stickyHeader() };
+document.addEventListener("DOMContentLoaded", function(event) { 
+  window.onscroll = function() { stickyHeader() };
 
     var header = document.getElementById("main-header");
     var body = document.body; // Get the body element
@@ -12,3 +13,4 @@ window.onscroll = function() { stickyHeader() };
         body.classList.remove("scrolled"); // Remove the scrolled class from the body
       }
     }
+  }
