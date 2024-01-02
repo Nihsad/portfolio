@@ -167,38 +167,38 @@ nav a:hover {
 #contact,
 #resume,
 #portfolio {
-    width: 100vw;
-    min-width: 100%;
+    width: 100%;
     margin: 0 auto;
     padding: 40px 40px 20px 40px;
     text-align: justify;
     color: var(--dark);
-    display: flex; 
-    justify-content: start;
+    display: flex;
+    align-content: space-around;
+    align-self: center;
 }
 
 /* Section Title Styles */
-#about::before,
-#contact::before,
-#resume::before,
-#portfolio::before {
-    width: 20vw;
-    border-right: 2px solid var(--dark);
-    padding: 0 20px 0 0;
+#about .title,
+#contact .title,
+#resume .title,
+#portfolio .title {
+    width: 15%;
+    border-right: 4px solid var(--dark);
+    padding: 10px 20px;
     margin: 0 20px;
     font-size: clamp(20px, 3vw, 30px);
     color: var(--dark);
     text-align: right;
+    float: right;
     font-weight: bold;
+    line-height: 100%;
 }
 
 .portfolio {
-    width: 100%;
-    max-width: none; /* Reset max-width for the .portfolio section */
+    width: 80%;
     display: grid;
     grid-template-columns: repeat(2, 50%);
     gap: 20px;
-    padding: 20px;
 }
 
 .item {
@@ -212,24 +212,16 @@ nav a:hover {
     justify-content: center;
 }
 
+.content {
+    width: 80%;
+}
+
 .content p {
     margin-bottom: 16px;
 }
-
-#about::before {
-    content: 'About Me';
-}
-
-#portfolio::before {
-    content: 'Work';
-}
-
-#contact::before {
-    content: 'Contact Me';
-}
-
-#resume::before {
-    content: 'Resume';
+  
+.item:first-child {
+    grid-column: span 2;
 }
 
 /* Adjusted Scrolled Section Styles */
