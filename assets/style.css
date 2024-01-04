@@ -236,7 +236,7 @@ nav a:hover {
     margin-bottom: 16px;
 }
   
-.item:first-child {
+.item-img:first-child {
     grid-column: span 2;
     height: 15vh;
     background: url('./images/css_snippet_cheatsheet.gif'), 
@@ -246,7 +246,7 @@ nav a:hover {
     transition: all 0.6s ease;
 }
 
-.item:first-child.item:hover {
+.item-img:first-child.item-img:hover {
     background: linear-gradient(var(--grad-3-75), var(--grad-3-75)),
     url('./images/css_snippet_cheatsheet.gif');
     background-size: cover;
