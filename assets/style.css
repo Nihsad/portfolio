@@ -10,6 +10,7 @@
     --grad-2: rgb(222, 131, 77);
     --grad-3: rgba(240, 210, 144, 1);
     --drop-shadow: rgba(68, 48, 48, 0.7);
+    --grad-3-75: rgba(240, 210, 144, 0.25);
     --lg: 2.5em;
     --md: 1.25em;
     --bg-image: url('./images/header-background.jpg');
@@ -31,7 +32,7 @@ body {
 
 /* Header Styles */
 header {
-    position: absolute;
+    position: relative;
     height: 100vh;
     width: 100%;
     padding: 20px 0;
@@ -48,13 +49,30 @@ header {
     transform: translateY(0);
 }
 
+.fa-angles-down {
+    font-family: 'Palanquin', sans-serif;
+    position: absolute;
+    color: var(--dark);
+    bottom: 20px;
+    font-size: clamp(15px, 4vw, 40px);
+    transition: bottom 0.6s ease-in-out;
+}
+
+header:hover .fa-angles-down {
+    bottom: 10px;
+}
+
+header .fa-angles-down:hover {
+    bottom: 15px;
+}
+
 header h1 {
     margin: 0 auto;
     width: fit-content;
     height: auto;
     display: flex;
     flex-direction: column;
-    font-size: clamp(30px, 5vw, 60px);
+    font-size: clamp(30px, 6vw, 70px);
     color: var(--dark);
     line-height: 100%;
 }
@@ -65,7 +83,9 @@ header p.subtitle {
     height: auto;
     width: fit-content;
     left: 4vw;
-    font-size: 1.75vw;
+    font-size: 2vw;
+    font-weight: bold;
+    letter-spacing: 2px;
     color: var(--grad-2);
     font-family: 'Gilda Display', serif;
 }
@@ -76,43 +96,17 @@ header p.subtitle {
     left: -10000px;
     top: auto;
     display: none;
+    transition: all 0.6s ease;
+}
+
+.to-content {
+    transition: all 
 }
 
 .skip:focus {
     position: static;
     width: auto;
     height: auto;
-}
-
-/* Sticky Header Styles */
-header.sticky {
-    position: fixed;
-    height: 150px;
-    top: 0;
-    opacity: 1;
-    transform: translateY(0);
-    background: linear-gradient(var(--light-75), var(--light-75)), var(--bg-image);
-    background-size: cover;
-    background-position: bottom;
-}
-
-/* Scrolled Body Styles */
-body.scrolled {
-    padding-top: 250px;
-    height: auto;
-}
-
-/* Placeholder Styles */
-.placeholder {
-    height: 0;
-    transition: opacity 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55), height 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-    opacity: 1;
-}
-
-.placeholder.hidden {
-    height: 0;
-    opacity: 0;
-    display: none;
 }
 
 /* Navigation Styles */
@@ -203,17 +197,39 @@ nav a:hover {
 
 .item {
     width: 100%;
+    height: 10vh;
     background-color: #f0f0f0;
-    padding: 20px;
     text-align: center;
-    border: 1px solid #ccc;
+    border: 4px solid var(--grad-3);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding-bottom: 10px; 
+}
+
+.item .code-info {
+    background-color: var(--grad-3);
+    padding: 10px;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+.portfolio a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.item .code-info p {
+    font-size: 14px;
+    padding-top: 4px;
+    
 }
 
 .content {
     width: 80%;
+    padding: 10px 0;
 }
 
 .content p {
@@ -222,25 +238,66 @@ nav a:hover {
   
 .item:first-child {
     grid-column: span 2;
-}
-
-/* Adjusted Scrolled Section Styles */
-body.scrolled #about {
-    margin-top: 0;
-    transition: margin-top 0.6s ease;
-}
-  
-.item:first-child {
-    grid-column: span 2;
-}
-
-/* Sticky Navigation Styles */
-nav.sticky-nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    background: linear-gradient(var(--light-75), var(--light-75)), var(--bg-image);
+    height: 15vh;
+    background: url('./images/css_snippet_cheatsheet.gif'), 
+        var(--grad-3);
     background-size: cover;
-    background-position: bottom;
+    background-position: 25% 25%;
+    transition: all 0.6s ease;
 }
+
+.item:first-child.item:hover {
+    background: linear-gradient(var(--grad-3-75), var(--grad-3-75)),
+    url('./images/css_snippet_cheatsheet.gif');
+    background-size: cover;
+    background-position: 50%;
+}
+
+@media screen and (max-width: 991px) {
+    #about,
+    #contact,
+    #resume,
+    #portfolio {
+        width: 100%;
+        margin: 0 auto;
+        padding: 20px 40px 0;
+        text-align: justify;
+        color: var(--dark);
+        display: flex;
+        flex-direction: column;
+        align-content: space-around;
+        align-self: center;
+    }
+
+    #about .title,
+    #contact .title,
+    #resume .title,
+    #portfolio .title {
+        width: 90%;
+        border-right: none;
+        border-bottom: 4px solid var(--dark);
+        font-size: clamp(20px, 3vw, 30px);
+        color: var(--dark);
+        text-align: left;
+        float: left;
+        font-weight: bold;
+        line-height: 100%;
+        padding: 0px;
+        margin-bottom: 20px;
+    }
+
+    .content,
+    .portfolio {
+        margin-left: 40px;
+    }
+
+    .portfolio {
+        width: 77%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    
+} 
+
