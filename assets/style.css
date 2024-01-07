@@ -247,11 +247,65 @@ nav a:hover {
     transition: all 0.6s ease;
 }
 
+.item-img:nth-child(2) {
+    background: url('./images/work-card-ph.jpg'), 
+        var(--grad-3);
+    background-size: cover;
+    background-position: 25% 25%;
+    transition: all 0.6s ease;
+}
+
+.item-img:nth-child(3) {
+    background: url('./images/work-card-ph.jpg'), 
+        var(--grad-3);
+    background-size: cover;
+    background-position: 25% 25%;
+    transition: all 0.6s ease;
+}
+
 .item-img:first-child.item-img:hover {
     background: linear-gradient(var(--grad-3-75), var(--grad-3-75)),
     url('./images/css_snippet_cheatsheet.gif');
     background-size: cover;
     background-position: 50%;
+}
+
+.item-img:nth-child(2).item-img:hover,
+.item-img:nth-child(3).item-img:hover {
+    background: linear-gradient(var(--grad-3-75), var(--grad-3-75)),
+    url('./images/work-card-ph.jpg');
+    background-size: cover;
+    background-position: 50%;
+}
+
+#contact .content {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    
+}
+#contact .content a {
+    text-decoration: none;
+    color: var(--grad-2);
+    transition: all 0.6s ease;
+}
+
+#contact .content a:hover {
+    color: var(--dark)
+}
+
+footer {
+    margin: 0 auto;
+    padding: 20px 0;
+    text-align: center;
+    width: fit-content;
+}
+
+footer h2 {
+    
+    color: var(--dark);
+    font-size: 24px;
 }
 
 @media screen and (max-width: 991px) {
