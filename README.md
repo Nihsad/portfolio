@@ -12,4 +12,5 @@ As a web developer, I want to have a portfolio that showcases my work and is eas
 
 [Live Site](https://nihsad.github.io/portfolio/)
 
-# ADD SCREENSHOTS
+![Gif screenshot showing some features of the application](assets/images/readme-screenshot-1.gif)
+![Gif screenshot showing additional features of the application](assets/images/readme-screenshot-2.gif)
