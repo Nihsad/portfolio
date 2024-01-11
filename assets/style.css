@@ -191,6 +191,18 @@ nav a:hover {
     transition: all 1s ease;
 }
 
+#about .content p {
+    display: inline-block;
+}
+
+#about .content img {
+    box-sizing: content-box;
+    width: 120px;
+    height: 120px;
+    float: left;
+    padding: 0 15px 0 0;
+}
+
 .portfolio {
     width: 80%;
     display: grid;
